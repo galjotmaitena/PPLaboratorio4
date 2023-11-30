@@ -1,0 +1,54 @@
+<form>
+    <div class="row g-3">
+      <!-- CONTROL CODIGO -->
+      <div>
+        <label for="codigo" class="form-label">Código</label>
+        <input
+          type="number"
+          class="form-control"
+          required
+          readonly
+          name="codigo"
+          [(ngModel)]="codigo"
+        />
+      </div>
+      <!-- CONTROL COLOR -->
+      <div>
+        <label for="color" class="form-label">Color</label>
+        <input
+          type="text"
+          class="form-control"
+          required
+          readonly
+          name="color"
+          [(ngModel)]="color"
+        />
+      </div>
+      <!-- CONTROL EMPRESA -->
+      <div>
+        <label for="empresa" class="form-label">Empresa</label>
+        <input
+          type="text"
+          class="form-control"
+          required
+          readonly
+          name="empresa"
+          [(ngModel)]="empresa"
+        />
+      </div>
+      <!-- CONTROL CAPACIDAD -->
+      <div>
+        <label for="capacidad" class="form-label">Capacidad</label>
+        <input
+          type="number"
+          class="form-control"
+          required
+          readonly
+          name="capacidad"
+          [(ngModel)]="capacidad"
+        />
+      </div>
+    </div>
+    <hr class="my-4" />
+  </form>
+  

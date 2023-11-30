@@ -1,0 +1,44 @@
+<div class="container py-3">
+    <main>
+      <div class="row row-cols row-cols-md-3 mb-3 text-center">
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal">CONTAINER ELEGIDO</h4>
+            </div>
+            <div class="card-body">
+               <app-mostrar-container [container]="containerElegido"></app-mostrar-container>
+            </div>
+          </div>
+        </div>
+
+        <div class="col" *ngIf="productoEnviado">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal">INGRESAR STOCK</h4>
+            </div>
+            <div class="card-body">
+              <app-mostrar-producto (stockEnviado)="tomarStock($event)" [producto]="productoEnviado"></app-mostrar-producto>
+            </div>
+          </div>
+        </div>
+
+        <div class="col" *ngIf="productoEnviado">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">PRODUCTOS DEL CONTAINER</h4>
+              </div>
+              <div class="card-body">
+                <app-producto-container [container]="containerElegido" [productoEnviado]="productoConStock"></app-producto-container>
+              </div>
+            </div>
+          </div>
+      </div>
+  
+      <h2 class="display-6 text-center mb-4">LISTADO CONTAINERS</h2>
+      <app-listado (containerElegido)="tomarContainer($event)"></app-listado>
+
+      <h2 *ngIf="containerElegido" class="display-6 text-center mb-4">LISTADO PRODUCTOS</h2>
+      <app-listado-productos *ngIf="containerElegido" (productoEnviado)="tomarProducto($event)" (reiniciarProducto)="reiniciarProducto($event)"></app-listado-productos>
+    </main>
+</div>

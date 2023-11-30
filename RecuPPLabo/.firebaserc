@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "recupplabo": {
+      "hosting": {
+        "ModeloRecuPPLabo": [
+          "recupplabo"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "recupplabo"
+  }
+}

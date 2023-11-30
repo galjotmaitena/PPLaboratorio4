@@ -1,0 +1,26 @@
+<div class="container-gral">
+    <nav>
+        <div class="btn">
+            <button *ngIf="!userLogeado" class="btnSL" routerLink = "/login">Ingresar</button>
+            <!-- <button class="btnNav" >Alta</button>
+            <button class="btnNav" >ABM</button>
+            <button class="btnNav" >Detalle Productos</button> -->
+            <button class="btnNav" routerLink = "/alta">Alta</button>
+            <button class="btnNav" routerLink = "/detalle">Detalle Productos</button>
+            <button class="btnNav" routerLink="/listado-publico">Listado Publico</button>
+            <button class="btnNav" routerLink="/container">Container</button>
+            <button class="btnNav" routerLink="/cargarContainer">Cargar Container</button>
+            <button class="btnNav" routerLink="/registro">Registro</button>
+            <!-- <button class="btnNav" >Productos</button> -->
+            <button *ngIf="userLogeado" class="btnSL" (click)="logout()">Log Out</button>
+        </div>
+    </nav>
+    <div style="flex-direction: row; width: 60%; display: flex; align-items: center; height: 60%">
+        <img style="height: 90%;" [src]="perfil.avatar_url">
+        <div style="flex-direction: column; margin: 10px;">
+            <h1 class="texto">{{perfil.name}}</h1>
+            <h3 class="texto">{{perfil.login}}</h3>
+            <h5 class="texto">{{perfil.created_at.split('T')[0]}}</h5>
+        </div>
+    </div>
+</div>

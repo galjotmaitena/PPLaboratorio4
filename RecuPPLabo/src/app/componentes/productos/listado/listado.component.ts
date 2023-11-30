@@ -1,0 +1,27 @@
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Firestore } from '@angular/fire/firestore';
+import { FirestoreService } from 'src/app/servicios/firestore.service';
+
+@Component({
+  selector: 'app-listado',
+  templateUrl: './listado.component.html',
+  styleUrls: ['./listado.component.scss']
+})
+export class ListadoComponent {
+  @Output() productoEnviado = new EventEmitter<any>();
+  listadoProductos: any[] = [];
+  constructor(private firestore: Firestore) {}
+
+  ngOnInit(): void {
+    FirestoreService.traerFs('productos', this.firestore).subscribe((productos:any) => {
+      if (productos != null) {
+        this.listadoProductos = productos;
+      }
+    });
+  }
+
+  enviarProducto(producto: any)
+  {
+    this.productoEnviado.emit(producto);
+  }
+}

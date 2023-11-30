@@ -1,0 +1,21 @@
+<div class="container-gral">
+    <div class="login">
+        <div>
+            <h1 id="title">Ingreso</h1>
+        </div>
+        <div class="ingresar">
+            <input type="email" name="email" placeholder="Ingrese su email" [(ngModel)]="correo">
+            <input type="password" name="pass" placeholder="Ingrese su clave" [(ngModel)]="clave">
+            <button id="btnIngresar" (click)="iniciarSesion()">Ingresar</button>
+        </div>
+        <div class="users">
+            <button class="btnLogin" (click)="cargarDatos('admin@admin.com', '111111')">
+                <span id="displayName" class="user-name">Admin</span>
+            </button>
+            <button class="btnLogin" (click)="cargarDatos('empleado@empleado.com', '222222')">
+                <span id="displayName" class="user-name">Empleado</span>
+            </button>
+        </div>
+    </div>
+    <div class="toast" id="myToast" *ngIf="mostrarToast">{{mensaje}}</div>
+</div>

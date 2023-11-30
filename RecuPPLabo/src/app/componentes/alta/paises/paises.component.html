@@ -1,0 +1,9 @@
+<div style="width: 100%;">
+    <div class="col-md-5 col-lg-4 order-md-last" style="height: 50%;">
+        <div style="height: 10%; overflow: auto;">
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; " *ngFor="let pais of paises">
+                <img (click)="enviarPaisElegido(pais)" style="width: 40%; margin: 10px; cursor: pointer;" [src]="pais.flags.png">
+            </div>
+        </div>
+    </div>
+</div>

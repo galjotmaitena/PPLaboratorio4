@@ -1,0 +1,24 @@
+<form [formGroup]="form" class="needs-validation">
+    <div class="row g-3">
+        <div class="col-sm-6">
+        <label for="codigo" class="form-label">Codigo</label>
+        <input type="number" class="form-control" id="codigo" placeholder="Codigo del Producto" value="" readonly formControlName="codigo" [(ngModel)]="codigo" required >
+        </div>
+
+        <div class="col-12">
+        <label for="stock" class="form-label">Stock <span class="text-muted"></span></label>
+        <input type="number" class="form-control" id="stock" placeholder="Ingrese stock" formControlName="stock" [(ngModel)]="stock" required="">
+        <small
+        style="font-weight: bolder;"
+        class="text-danger"
+        *ngIf="form.controls['stock'].errors?.['required'] &&form.controls['stock'].touched"
+            >
+            Error.Ingrese el stock del producto.
+        </small>
+        </div>
+    </div>
+
+    <hr class="my-4">    
+
+    <button class="w-100 btn btn-primary btn-lg" type="button" [disabled]="!this.form.valid" (click)="enviarStock()" >Cargar Producto</button>
+</form>

@@ -1,0 +1,86 @@
+<form [formGroup]="form" class="needs-validation">
+    <div class="row g-3">
+        <div class="col-sm-6">
+        <label for="codigo" class="form-label">Codigo</label>
+        <input type="number" class="form-control" id="codigo" placeholder="Codigo del Producto" value="" formControlName="codigo" [(ngModel)]="codigo" required >
+        <small
+            style="font-weight: bolder;"
+            class="text-danger"
+            *ngIf="form.controls['codigo'].errors?.['required'] && form.controls['codigo'].touched"
+        >
+            Error.Ingrese un codigo para el producto.
+        </small>
+        </div>
+
+        <div class="col-sm-6">
+        <label for="descripcion" class="form-label">Descripcion</label>
+        <input type="text" class="form-control" id="descripcion" placeholder="Ingrese descripcion" value="" formControlName="descripcion" [(ngModel)]="descripcion" required>
+        <small
+            style="font-weight: bolder;"
+            class="text-danger"
+            *ngIf="form.controls['descripcion'].errors?.['required'] && form.controls['descripcion'].touched"
+            >
+            Error.Ingrese una descripcion para el producto.
+        </small>
+        </div>
+
+        <div class="col-12">
+        <label for="precio" class="form-label">Precio</label>
+        <div class="input-group has-validation">
+            <!-- <span class="input-group-text"></span> -->
+            <input type="number" class="form-control" id="precio" placeholder="Ingrese precio" formControlName="precio" [(ngModel)]="precio" required>
+            <small
+            style="font-weight: bolder;"
+            class="text-danger"
+            *ngIf="form.controls['precio'].errors?.['required'] &&form.controls['precio'].touched"
+                >
+                Error.Ingrese un precio para el producto.
+        </small>
+        </div>
+        </div>
+
+        <div class="col-12">
+        <label for="stock" class="form-label">Stock <span class="text-muted">(Optional)</span></label>
+        <input type="number" class="form-control" id="stock" placeholder="Ingrese stock" formControlName="stock" [(ngModel)]="stock" required="">
+        <small
+        style="font-weight: bolder;"
+        class="text-danger"
+        *ngIf="form.controls['stock'].errors?.['required'] &&form.controls['stock'].touched"
+            >
+            Error.Ingrese el stock del producto.
+        </small>
+        </div>
+
+        <div class="col-12">
+        <label for="paisOrigen" class="form-label">Pais de origen</label>
+        <input type="text" class="form-control" id="paisOrigen" placeholder="" readonly [value]="pais?.name.common">
+        <!-- <small
+            style="font-weight: bolder;"
+            class="text-danger"
+            *ngIf="form.controls['paisOrigen'].errors?.['required'] && form.controls['paisOrigen'].touched">
+            Error.Ingrese un pais para el producto.
+        </small> -->
+        </div>
+
+        <div class="col-12">
+        <select id="comestible" [(ngModel)]="comestible" class="form-control" formControlName="comestible" required>
+            <option value="">Seleccione uno</option>
+            <option value="si">SI</option>
+            <option value="no">NO</option>
+        </select>
+        <small
+            style="font-weight: bolder;"
+            class="text-danger"
+            *ngIf="form.controls['comestible'].errors?.['required'] && form.controls['comestible'].touched"
+            >
+            Error.Ingrese si el producto es comestible o no.
+        </small>
+        </div>
+    </div>
+
+    <hr class="my-4">    
+
+    <button class="w-100 btn btn-primary btn-lg" type="button" [disabled]="!this.form.valid" (click)="enviarProducto()" >Crear Producto</button>
+</form>
+        
+ 

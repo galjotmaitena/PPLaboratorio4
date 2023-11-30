@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "ModeloRecuPPLabo",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

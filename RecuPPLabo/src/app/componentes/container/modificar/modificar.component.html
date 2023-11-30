@@ -1,0 +1,95 @@
+<form [formGroup]="form" (ngSubmit)="enviar()">
+    <div class="row g-3">
+      <!-- CONTROL CODIGO -->
+      <div>
+        <label for="codigo" class="form-label">Código</label>
+        <input
+          type="number"
+          formControlName="codigo"
+          class="form-control"
+          formControlName="codigo"
+          name='n'
+          [(ngModel)]="codigo"
+          readonly
+          required
+        />
+        <small
+          style="font-weight: bolder; text-shadow: 1px 1px 1px #000"
+          class="text-warning"
+          *ngIf="
+                          form.controls['codigo'].errors?.['required'] &&
+                          form.controls['codigo'].touched
+                        "
+        >
+          Se debe ingresar el codigo del Container
+        </small>
+      </div>
+      <!-- CONTROL COLOR -->
+      <div>
+        <label for="color" class="form-label">Color</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="color"
+          required
+        />
+        <small
+          style="font-weight: bolder; text-shadow: 1px 1px 1px #000"
+          class="text-warning"
+          *ngIf="
+                                  form.controls['color'].errors?.['required'] &&
+                                  form.controls['color'].touched
+                                "
+        >
+          Se debe ingresar el color del Container
+        </small>
+      </div>
+      <!-- CONTROL EMPRESA -->
+      <div>
+        <label for="empresa" class="form-label">Empresa</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="empresa"
+          required
+        />
+        <small
+          style="font-weight: bolder; text-shadow: 1px 1px 1px #000"
+          class="text-warning"
+          *ngIf="
+                          form.controls['empresa'].errors?.['required'] &&
+                          form.controls['empresa'].touched
+                        "
+        >
+          Se debe ingresar la empresa del container
+        </small>
+      </div>
+      <!-- CONTROL CAPACIDAD -->
+      <div>
+        <label for="capacidad" class="form-label">Precio</label>
+        <input
+          type="number"
+          formControlName="capacidad"
+          class="form-control"
+          formControlName="capacidad"
+          required
+        />
+        <small
+          style="font-weight: bolder; text-shadow: 1px 1px 1px #000"
+          class="text-warning"
+          *ngIf="
+                          form.controls['capacidad'].errors?.['required'] &&
+                          form.controls['capacidad'].touched
+                        "
+        >
+          Se debe ingresar la capacidad del Container
+        </small>
+      </div>
+    </div>
+  
+    <hr class="my-4" />
+  
+    <button class="w-100 btn btn-primary btn-lg" type="submit">
+      Modificar
+    </button>
+</form>

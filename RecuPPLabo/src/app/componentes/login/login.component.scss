@@ -1,0 +1,131 @@
+.container-gral{
+    background-color: #60d5df;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    justify-content:center;
+    align-items: center;
+    display: flex;
+}
+
+.login{
+    flex-direction: column; 
+    display: flex; 
+    position: relative;
+    width: 22%;
+    height: 65%;
+    background-color: #186e6a;
+    box-shadow: 5px 5px 10px 3px;
+    border-radius: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+#title{
+    //font-family: "Audiowide", sans-serif;
+    color: #d5fe40;
+    position: relative;
+}
+
+.ingresar{
+    height: 50%;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+input{
+    background-color: transparent;
+    border-top: transparent;
+    border-right: transparent;
+    border-left: transparent;
+    border-bottom-color: #d5fe40;
+    margin: 4%;
+    color: #d5fe40;
+    //font-family: "Audiowide", sans-serif;
+    width: 75%;
+}
+
+input::placeholder{
+    color: #d5fe40;
+    //font-family: "Audiowide", sans-serif;
+}
+
+#btnIngresar{
+    display: flex;
+    background-color: #b4e100;
+    border-radius: 10px;
+    margin: 5px;
+    color: #3c0a6d;
+    border: none;
+    text-align:center;
+    justify-content: center;
+    width: 40%;
+}
+
+.users{
+    position: relative;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.btnLogin{
+    display: flex;
+    background-color: #b4e100;
+    border-radius: 10px;
+    margin: 5px;
+    font-size: 15px;
+    color: #3c0a6d;
+    border: none;
+    padding: 4px;
+    text-align:center;
+    justify-content: center;
+    width: 40%;
+}
+
+//TOAST
+.toast {
+    display:flex;
+    background-color: #e0abfe;
+    color: #000000;
+    padding: 10px;
+    border-radius: 5px;
+    position:absolute;
+    justify-content: center;
+    top: 10%;
+    right: 50%;
+    z-index: 1000;
+    animation: fadein 2s, fadeout 2s 2s;
+}
+  
+@keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+  
+  @keyframes fadeout {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+

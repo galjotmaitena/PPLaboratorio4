@@ -1,0 +1,25 @@
+<div class="contenedor">
+    <main class="form-signin">
+        <form (ngSubmit)="ingresar()" [formGroup]="form">
+          <!-- <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+          <h1 class="h3 mb-3 fw-normal" style="color: #d5fe40; position: relative;">Registro</h1>
+      
+          <div class="ingresar">
+            <input formControlName="correo" type="email" name="e" [(ngModel)]="correo" class="form-control" id="floatingInput" placeholder="Ingrese su correo">
+            <input formControlName="clave" type="password" name="p" [(ngModel)]="clave" class="form-control" id="floatingInput" placeholder="Ingrese su clave">
+
+          </div>
+          
+      
+          <div class="check">
+            <label>
+              <input formControlName="check" [(ngModel)]="check" type="checkbox" value="remember-me"> Acepta los terminos y condiciones
+            </label>
+          </div>
+          <div style="width: 100%; justify-content: center; align-items: center; margin: 5px;">
+            <button id="btnIngresar" (click)="registrarse()" [disabled]="!form.valid || !check">Registrar</button>
+          </div>
+          
+        </form>
+    </main>
+</div>

@@ -1,0 +1,10 @@
+<div style="width: 100vw; height: 100vh;">
+    <div class="contenedor row">
+        <div class="col" style="margin: 5px; padding: auto;">
+            <app-producto [pais]="paisElegido"></app-producto>
+        </div>
+        <div class="col" style="margin: 5px; padding: auto;">
+            <app-paises (elegirPaisEvent)="elegirPais($event)"></app-paises>
+        </div>
+    </div>
+</div>
